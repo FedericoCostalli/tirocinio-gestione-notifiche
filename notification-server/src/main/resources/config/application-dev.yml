@@ -1,0 +1,28 @@
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+logging:
+  pattern:
+    level: ",contact,%X{source.type},%5p,%X{traceinfo},%X{req.requestURI},%X{auth.identityID},%X{auth.accountID},%X{auth.authID}"
+  level:
+    ROOT: DEBUG
+
+spring:
+  profiles:
+    active: dev
+    include:
+      - swagger
+      # Uncomment to activate TLS for the dev profile
+      #- tls
+  
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration
+#
+# ===================================================================
+
+application:

@@ -1,0 +1,56 @@
+# Configurable Servicer Port
+opentracing:
+  jaeger:
+    logSpans: false
+server:
+  port: ${APP_SERVER_PORT:8080}
+
+logging:
+  level:
+    root: INFO
+    it.tai: DEBUG
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration
+#
+# ===================================================================
+
+application:
+      contact:
+        service: google
+      credentials: 
+          -
+            username: pincopoallino
+            password: 123
+          -
+            username: pinco2
+            password: 123
+      notification:
+          service: mock
+      dynamodb:
+        accesskey:
+        secretkey:
+        mode: accesskey
+      admin:
+        phoneNumber:
+        apiUrl:
+        username:
+        password:
+ 
+api:
+  title: Contact Aggregate APIs
+  description: APIs for managing Command ops on Contact Aggregate
+  version: #project.version#;
+  #termsOfServiceUrl: ApiConstants.termsOfServiceUrl
+  #contactName: ApiConstants.contactName
+  #contactUrl: ApiConstants.contactUrl
+  #contactEmail: ApiConstants.contactEmail
+  #license: ApiConstants.license
+  #licenseUrl: ApiConstants.licenseUrl
+  defaultIncludePattern: /api/.*
+  #host: ApiConstants.host
+  #protocols: ApiConstants.protocols
+  #useDefaultResponseMessages: ApiConstants.useDefaultResponseMessages
+

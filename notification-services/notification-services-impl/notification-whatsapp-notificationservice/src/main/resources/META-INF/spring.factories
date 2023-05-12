@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  config.it.tai.notificationmanagement.service.notification.whatsapp.WhatsAppNotificationConfig,\
+  config.it.tai.notificationmanagement.service.notification.whatsapp.WhatsAppProperties

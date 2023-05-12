@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>it.tai.notificationmanagement</groupId>
+    <artifactId>notification-maker</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.9</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+    <modules>
+     <!--   <module>authService</module> -->
+   
+		<module>notification-services</module>
+		<module>notification-server</module>
+        <module>notification-services/notification-dbservice</module>
+        <module>notification-services/notification-services-impl/notification-dynamodb-dbservice</module>
+
+
+    </modules>
+  
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+		<feign.version>12.2</feign.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+   
+
+
+<dependencyManagement>
+  <dependencies>
+  
+    <dependency>
+      
+           <groupId>it.tai.notificationmanagement</groupId>
+             <artifactId>notification-notificationservice</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+ 
+     <dependency>
+      
+           <groupId>it.tai.notificationmanagement</groupId>
+            <artifactId>notification-whatsapp-notificationservice</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+  
+   <dependency>
+      
+           <groupId>it.tai.notificationmanagement</groupId>
+            <artifactId>notification-google-contactservice</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+  
+   	<dependency>
+			<groupId>it.tai.notificationmanagement</groupId>
+			<artifactId>notification-mock-contactservice</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+  
+       <dependency>
+      
+	  
+           <groupId>it.tai.notificationmanagement</groupId>
+           <artifactId>notification-appointmentservice</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+		
+		
+        <dependency>
+      
+	  
+           <groupId>it.tai.notificationmanagement</groupId>
+            <artifactId>notification-contactservice</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+		
+		
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.8.1</version>
+		</dependency>
+		
+		
+
+    			<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-core</artifactId>
+			<version>${feign.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-okhttp</artifactId>
+			<version>${feign.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-jackson</artifactId>
+			<version>${feign.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-slf4j</artifactId>
+			<version>${feign.version}</version>
+		</dependency>
+
+	
+		  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>	
+		
+</project>
